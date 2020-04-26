@@ -10,5 +10,6 @@ var UsersSchema = mongoose.Schema(
   { timestamps: { createdAt: 'submit_date' } }
 );
 
+
 var UsersModel = mongoose.model('Users', UsersSchema);
 module.exports = UsersModel;
