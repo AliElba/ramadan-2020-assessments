@@ -40,6 +40,7 @@ app.get('/users', async (req, res, next) => {
   next();
 });
 
+app.use(express.json());
 app.post('/users/login', async (req, res, next) => {
   const response = await UserData.createUser(req.body);
   res.redirect(`http://localhost:5500?id=${response._id}`);
