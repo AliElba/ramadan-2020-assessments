@@ -128,6 +128,7 @@
 
 <script type="text/javascript">
 
+    // POST using XMLHttpRequest
     /*document.addEventListener('DOMContentLoaded', function () { //once the dom loaded even before the image are loaded vs window.
         const contactForm = document.getElementById("formVideoRequest");
         contactForm.addEventListener("submit", function (event) {
@@ -163,32 +164,16 @@
         });
     });*/
 
+    // POST using fetch and new FormData
     document.addEventListener('DOMContentLoaded', function () { //once the dom loaded even before the image are loaded vs window.
         const formVideoRequest = document.getElementById("formVideoRequest");
         formVideoRequest.addEventListener("submit", function (event) {
             event.preventDefault(); // don't search for any other action on the page which will avoid the post back event
 
-            let author_name = document.getElementById("author_name").value;
-            let author_email = document.getElementById("author_email").value;
-            let topic_title = document.getElementById("topic_title").value;
-            let target_level = document.getElementById("target_level").value;
-            let topic_details = document.getElementById("topic_details").value;
-            let expected_result = document.getElementById("expected_result").value;
-
-            let data = JSON.stringify({
-                "author_name": author_name,
-                "author_email": author_email,
-                "topic_title": topic_title,
-                "target_level": target_level,
-                "topic_details": topic_details,
-                "expected_result": expected_result
-            });
-
             const formData = new FormData(formVideoRequest); //get all form data elements which has already name attribute on it
             fetch('http://localhost:7777/video-request', {
                 method: 'POST',
-                // body: formData
-                body: data
+                body: formData
             })
                 .then((bold) => bold.json())
                 .then((data) => {
