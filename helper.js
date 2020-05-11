@@ -49,18 +49,4 @@ function getRequestTemplate(item) {
     return itemWrapperNode;
 }
 
-function addEventListenerToRequestTemplate(item) {
-    const scoreVoteElem = document.getElementById(`score_vote_${item._id}`);
 
-    document.getElementById(`vote_ups_${item._id}`)
-        .addEventListener("click", function (event) {
-            event.preventDefault();
-            updateVoteUsingFetch({id: item._id, vote_type: 'ups'}, scoreVoteElem);
-        });
-    document.getElementById(`vote_downs_${item._id}`)
-        .addEventListener("click", function (event) {
-            event.preventDefault();
-            updateVoteUsingFetch({id: item._id, vote_type: 'downs'}, scoreVoteElem);
-        });
-
-}

@@ -17,20 +17,22 @@
                 <div class="col-md">
                     <div class="form-group">
                         <label for="author_name">Your name *</label>
-                        <input id="author_name"
-                               class="form-control"
-                               name="author_name"
-                               placeholder="Write your name here"
+                        <input
+                                id="author_name"
+                                class="form-control"
+                                name="author_name"
+                                placeholder="Write your name here"
                         />
                     </div>
                 </div>
                 <div class="col-md">
                     <div class="form-group">
                         <label for="author_email">Your email *</label>
-                        <input id="author_email"
-                               class="form-control"
-                               name="author_email"
-                               placeholder="Write your email here"
+                        <input
+                                id="author_email"
+                                class="form-control"
+                                name="author_email"
+                                placeholder="Write your email here"
                         />
                     </div>
                 </div>
@@ -40,17 +42,19 @@
                 <div class="col-md">
                     <div class="form-group">
                         <label for="topic_title">Topic *</label>
-                        <input id="topic_title"
-                               class="form-control"
-                               name="topic_title"
-                               placeholder="Write your suggested topic here"
+                        <input
+                                id="topic_title"
+                                class="form-control"
+                                name="topic_title"
+                                placeholder="Write your suggested topic here"
                         />
                     </div>
                 </div>
                 <div class="col-md">
                     <div class="form-group">
                         <label for="target_level">Target level</label>
-                        <select id="target_level"
+                        <select
+                                id="target_level"
                                 class="form-control"
                                 name="target_level"
                                 placeholder="Write your name here"
@@ -66,20 +70,22 @@
                 <div class="col-md">
                     <div class="form-group">
                         <label for="topic_details">More details *</label>
-                        <textarea id="topic_details"
-                                  class="form-control"
-                                  name="topic_details"
-                                  placeholder="Write your topic in more details here"
+                        <textarea
+                                id="topic_details"
+                                class="form-control"
+                                name="topic_details"
+                                placeholder="Write your topic in more details here"
                         ></textarea>
                     </div>
                 </div>
                 <div class="col-md">
                     <div class="form-group">
                         <label for="expected_result">Expected results</label>
-                        <textarea id="expected_result"
-                                  class="form-control"
-                                  name="expected_result"
-                                  placeholder="Write what do you expect after watching this video"
+                        <textarea
+                                id="expected_result"
+                                class="form-control"
+                                name="expected_result"
+                                placeholder="Write what do you expect after watching this video"
                         ></textarea>
                     </div>
                 </div>
@@ -92,32 +98,16 @@
     </div>
     <hr/>
     <h1 class="mb-4">List of requested videos</h1>
+    <hr/>
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary" id="sort-by-date">Sort By Date</button>
+        <button type="button" class="btn btn-secondary" id="sort-by-votes">Sort By Votes</button>
+    </div>
+    <hr/>
     <div id="listOfRequests"></div>
 </div>
 
-<script type="text/javascript">
-
-    const url_post = 'http://localhost:7777/video-request';
-    const url_get = 'http://localhost:7777/video-request';
-    const url_put = 'http://localhost:7777/video-request/vote';
-
-    document.addEventListener('DOMContentLoaded', function () { //once the dom loaded even before the image are loaded vs window.
-
-        getItems(url_get);
-        const formVideoRequest = document.getElementById("formVideoRequest")
-
-        formVideoRequest.addEventListener("submit", function (event) {
-            event.preventDefault(); // don't search for any other action on the page which will avoid the post back event
-            // postUsingXMLHttpRequest();
-            postUsingFetch(formVideoRequest);
-        });
-    });
-</script>
-
 <script type="text/javascript" src="helper.js"></script>
-<script type="text/javascript" src="post.js"></script>
-<script type="text/javascript" src="get.js"></script>
-<script type="text/javascript" src="put.js"></script>
-
+<script type="text/javascript" src="ramadan.js"></script>
 </body>
 </html>
